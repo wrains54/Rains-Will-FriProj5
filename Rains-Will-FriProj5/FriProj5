@@ -1,0 +1,42 @@
+import sqlite3
+import random
+
+# Connect to the SQLite database file
+conn = sqlite3.connect('FridayProj5.db')
+cursor = conn.cursor()
+
+# Get the names of all tables in the database
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+tables = cursor.fetchall()
+
+# Assuming we have only one table, get its name
+table_name = tables[0][0]
+
+# Extract data from the specified table
+cursor.execute(f"SELECT question, answer FROM {table_name};")
+questions_answers = cursor.fetchall()
+
+# Shuffle the list of questions
+random.shuffle(questions_answers)
+
+# Initialize user score
+user_score = 0
+
+# Iterate through each question
+for question, answer in questions_answers:
+    # Display the question
+    print(question)
+    # Prompt the user for an answer
+    user_answer = input("Your answer: ").strip()
+    # Check if the answer is correct
+    if user_answer.lower() == answer.lower():
+        print("Correct!")
+        user_score += 1
+    else:
+        print("Incorrect. The correct answer is:", answer)
+
+# Display final score
+print("Your score:", user_score, "out of", len(questions_answers))
+
+# Close the connection to the database
+conn.close()
