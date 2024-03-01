@@ -1,0 +1,33 @@
+# Trivia Questions Program
+
+This Python program allows users to study trivia questions by displaying questions from a dictionary and providing feedback on their answers.
+
+## Features
+
+- Displays trivia questions from a predefined dictionary.
+- Allows users to input their answers.
+- Provides feedback on whether the answers are correct or not.
+- Calculates and displays the user's final score.
+
+## Usage
+
+1. Clone the repository or download the Python script `trivia_questions.py`.
+2. Ensure you have Python installed on your system.
+3. Run the Python script in your terminal or command prompt.
+4. Answer each trivia question prompted.
+5. Receive feedback on your answers and see your final score at the end.
+
+## File Descriptions
+
+- `trivia_questions.py`: The Python script containing the trivia questions program.
+- `README.md`: This README file providing information about the program.
+
+## Additional Features
+
+- Randomization of questions.
+- Tracking and displaying the user's score.
+
+## Requirements
+
+- Python 3.x
+- SQLite3 (if using the database version)
